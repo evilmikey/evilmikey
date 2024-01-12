@@ -1,0 +1,238 @@
+
+@font-face {
+    font-family: 'webfontkit-20240112-031332';
+    src: url(Assets/Fonts/webfontkit-20240112-031332.zip);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'webfontkit-20240112-031332', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(#8453af, #ba9ce4, #e3ffbe );
+    line-height: 1.5;
+    color: #5d3b7a;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-bottom: 1em;
+}
+
+footer{
+    background-color: #ba9ce4;
+    color: #e3ffbe;
+    font-size:.9em;
+    margin-top: 4em;
+    padding:1.11em 0;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: #81de76;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navback{
+    padding-bottom: 5em;
+}
+
+.logo{
+    font-size: 32px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e3ffbf;
+    padding: 0.5rem;
+    background: #ba9ce4;
+    border-radius: 5px;
+    border: solid 3px #e3ffbf;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar{
+    padding: .5em;
+}
+
+.navbar .container{
+    justify-content: space-between;
+    display: flex;
+}
+
+.navbar a{
+    position: relative;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: .3s;
+}
+
+.navbar a:hover::before{
+    width: 100%;
+}
+
+.blog-post header{
+    text-align: center;
+    margin-top: 4em;
+}
+
+.blog-post header h5{
+    text-transform:uppercase;
+}
+
+.blog-post header h1 {
+    text-transform: capitalize;
+}
+
+.blog-post .image{
+    margin-top:2em;
+    margin-bottom:2em
+}
+
+.rounded-image img{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.subtitle{
+    margin-top : 2em;
+}
+
+.summary {
+    padding-left:40px;
+}
+
+.summary li {
+    margin-top: 1em;
+}
+
+.imgcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 20px 0 20px;
+} 
+
+.imgcontainer .imgbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imgcontainer .imgbox .dream{
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+}
+
+.imgcontainer .imgbox .dream img{
+    width: 100%;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+
+/* The dark background behind all images. */
+.gallery-overlay {
+    background-color: rgba(0, 0, 0, .75);
+    opacity: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    transition: all .2s ease;
+}
+
+/* Centers the overlay content to the center of the screen. */
+.gallery-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Basic styling for the gallery image. */
+.gallery-image-small {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: scale-down;
+}
+
+.gallery-image-large {
+    display: block;
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: scale-down;
+}
+
+/* The close icon - only used for visual effect. */
+.gallery-close {
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #555;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    height: 2rem;
+    justify-content: center;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 2rem;
+    z-index: 101;
+}
+
+/*
+    :target will find any overlay with an ID that matches the url.
+    So, if we're looking for #rabbit, only the gallery overlay with an ID of "rabbit" will appear.
+*/
+.gallery-overlay:target {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.caption {
+    color: #e0e2e4;
+    text-decoration: none;
+}
+
+.imgcontainer li{
+    list-style-type: none;
+}
+
+.game a{
+    color: #8453af;
+    padding: 0.5rem;
+    text-align: center;
+}

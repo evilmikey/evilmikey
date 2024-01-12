@@ -1,0 +1,93 @@
+:root {
+    --thumbnail-size: 5rem;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/*
+    The gallery icons - this can be any style that makes sense for your design.
+*/
+.gallery-nav {
+    display: flex;
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    justify-content: center;
+}
+.gallery-nav .nav-item {
+    margin: 0 .5rem;
+}
+.gallery-nav .nav-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: var(--thumbnail-size);
+    width: var(--thumbnail-size);
+}
+
+/* The dark background behind all images. */
+.gallery-overlay {
+    background-color: rgba(0, 0, 0, .75);
+    opacity: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    transition: all .2s ease;
+}
+
+/* Centers the overlay content to the center of the screen. */
+.gallery-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Basic styling for the gallery image. */
+.gallery-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* The close icon - only used for visual effect. */
+.gallery-close {
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #555;
+    border-radius: 100%;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    height: 2rem;
+    justify-content: center;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 2rem;
+    z-index: 101;
+}
+
+/*
+    :target will find any overlay with an ID that matches the url.
+    So, if we're looking for #rabbit, only the gallery overlay with an ID of "rabbit" will appear.
+*/
+.gallery-overlay:target {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.caption {
+    color: #e0e2e4;
+    text-decoration: none;
+}
